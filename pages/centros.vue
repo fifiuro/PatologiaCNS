@@ -1,10 +1,15 @@
 <template>
-    <nuxt-child/>
+    <nuxt-child />
 </template>
 
 <script>
     export default {
-      layout: 'dashboard'
+      layout: 'dashboard',
+      middleware({ $strapi, redirect }) {
+        if ($strapi.user === null) {
+          redirect('/login')
+        }
+      },
     }
 </script>
 

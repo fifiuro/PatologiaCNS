@@ -59,5 +59,10 @@
         return API.getLocation;
       }
     },
+    middleware({ $strapi, redirect }) {
+      if ($strapi.user === null) {
+        redirect('/login')
+      }
+    },
   };
 </script>

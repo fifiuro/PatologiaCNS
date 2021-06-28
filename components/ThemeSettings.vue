@@ -53,8 +53,8 @@ import colors from 'vuetify/es5/util/colors';
 export default {
   data () {
     return {
-      themeColor: 'indigo',
-      sideBarOption: 'light',
+      themeColor: 'teal',
+      sideBarOption: 'dark',
       colors: colors
     };
   },

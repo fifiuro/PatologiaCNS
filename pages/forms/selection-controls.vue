@@ -211,7 +211,7 @@
         radio4: false,
         radio5: false,
         s1: false,
-        s2: false,
+        s2: true,
         ex7: 'red',
         ex8: 'primary',
         colors: ['red', 'indigo', 'orange', 'primary']

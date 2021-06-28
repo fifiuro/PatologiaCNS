@@ -5,9 +5,9 @@
           <v-layout align-center justify-center>
             <div class="text-md-center">
               <h1>404</h1>
-              <h2 class="my-3 headline ">Sorry, page not found</h2>
+              <h2 class="my-3 headline ">Lo sentimos, Página no encontrada.</h2>
               <div>
-                <v-btn color="primary" @click="goHome">Go Home</v-btn>
+                <v-btn color="primary" @click="goHome">Ir Ventana Principal.</v-btn>
               </div>
             </div>
           </v-layout>
@@ -21,9 +21,9 @@
             </div>
             <div class="text-md-center">
               <h1>403</h1>
-              <h2 class="my-3 headline ">Sorry, access denied.</h2>
+              <h2 class="my-3 headline ">Acceso denegado.</h2>
               <div>
-                <v-btn color="primary" @click="goHome">Go Home</v-btn>
+                <v-btn color="primary" @click="goHome">Ir Ventana Principal.</v-btn>
               </div>
             </div>
           </v-layout>
@@ -37,9 +37,9 @@
             </div>
             <div class="text-md-center">
               <h1>500</h1>
-              <h2 class="my-3 headline ">Sorry, the server is down.</h2>
+              <h2 class="my-3 headline ">Lo sentimos, el Servidor no esta respondiendo.</h2>
               <div>
-                <v-btn color="primary" @click="goHome">Go Home</v-btn>
+                <v-btn color="primary" @click="goHome">Ir Ventana Principal.</v-btn>
               </div>
             </div>
           </v-layout>

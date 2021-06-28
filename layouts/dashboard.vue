@@ -14,16 +14,16 @@
           <v-footer height="auto" class="white pa-3 app--footer">
             <span class="caption">&copy; 2021</span>
             <v-spacer></v-spacer>
-            <span class="caption mr-1"> Hecho X Christian René Cárdenas Sánchez </span>
+            <span class="caption mr-1"> Ralizado por: Ing. Christian René Cárdenas Sánchez </span>
           </v-footer>
         </v-content>
         <!-- Go to top -->
         <app-fab></app-fab>
         <!-- theme setting -->
-        <v-btn small fab dark falt fixed top="top" right="right" class="setting-fab" color="red"
+        <!-- <v-btn small fab dark falt fixed top="top" right="right" class="setting-fab" color="red"
                @click="openThemeSettings">
           <v-icon>settings</v-icon>
-        </v-btn>
+        </v-btn> -->
         <v-navigation-drawer
           class="setting-drawer"
           temporary

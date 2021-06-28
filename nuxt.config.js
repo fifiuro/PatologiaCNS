@@ -10,17 +10,16 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Vue Material Admin Template',
+    title: 'Sistema de Patologia - CNS',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {
-        hid: 'description', name: 'description', content: 'Vue Material Admin Template is a \n' +
-          '    Google Material Design inspired admin dashboard template built with Vue and Vuetify.'
+        hid: 'description', name: 'description', content: 'Sistema de Registro y Seguimiento de Resultados del Servicio de Patología.'
       }
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'icon', type: 'image/x-icon', href: '/CNS.ico'},
       {
         rel: 'stylesheet',
         href:
@@ -58,7 +57,10 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: [],
+  modules: [
+    '@nuxtjs/strapi',
+    '@nuxtjs/markdownit'
+  ],
 
   /*
   ** Build configuration
@@ -78,5 +80,27 @@ module.exports = {
     extend(config, ctx) {
 
     }
-  }
+  },
+
+  strapi: {
+    entities: [
+      'personas',
+      'beneficiarios',
+      'histopatologias',
+      'centros',
+      'servicios',
+      'diagnosticos',
+      'doctores',
+      'codigos'
+    ],
+    url: 'http://173.16.1.67:1337',
+  },
+
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true,
+    // use: ['markdown-it-div', 'markdown-it-attrs'],
+  },
 }

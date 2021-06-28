@@ -8,17 +8,19 @@
     v-model="drawer"
     width="260"
   >
-    <v-toolbar color="primary darken-1" dark>
-      <img src="../static/m.png" height="36" alt="Vue Material Admin Template">
+    <v-toolbar color="primary darken-2" dark>
+      <img src="../static/CNS.png" height="36" alt="Vue Material Admin Template">
       <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">PATOLOGÍA</span>
+        <span class="hidden-sm-and-down">
+          <nuxt-link to="/dashboard" class="ir">PATOLOGÍA</nuxt-link>
+        </span>
       </v-toolbar-title>
     </v-toolbar>
     <vue-perfect-scrollbar class="drawer-menu--scroll" :settings="scrollSettings">
       <v-list dense expand>
         <template v-for="(item, i) in menus">
           <!--group with subitems-->
-          <v-list-group v-if="item.items" :key="item.name" :group="item.group" :prepend-icon="item.icon"
+          <v-list-group v-if="item.items && $strapi.user.role.name === 'Secretaria'" :key="item.name" :group="item.group" :prepend-icon="item.icon"
                         no-action="no-action">
             <v-list-tile slot="activator" ripple="ripple">
               <v-list-tile-content>
@@ -131,5 +133,10 @@
     .drawer-menu--scroll
       height: calc(100vh - 48px)
       overflow: auto
+
+  .ir {
+    color: white;
+    text-decoration: none;
+  }
 
 </style>

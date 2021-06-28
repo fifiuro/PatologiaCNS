@@ -1,6 +1,6 @@
 <template>
   <v-toolbar
-    color="primary"
+    color="primary darken-3"
     fixed
     dark
     app
@@ -9,11 +9,11 @@
       <v-toolbar-side-icon @click.stop="toggleDrawer()"></v-toolbar-side-icon>
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    Christian René
+    {{ $strapi.user.username }}
     <v-menu offset-y origin="center center" :nudge-right="140" :nudge-bottom="10" transition="scale-transition">
       <v-btn icon large flat slot="activator">
         <v-avatar size="30px">
-          <img src="../static/avatar/man_4.jpg" alt="Michael Wang"/>
+          <img src="../static/user.jpg" alt="$strapi.user.username"/>
         </v-avatar>
       </v-btn>
       <v-list class="pa-0">
@@ -44,25 +44,9 @@
       return {
         items: [
           {
-            icon: 'account_circle',
-            href: '#',
-            title: 'Profile',
-            click: (e) => {
-              console.log(e);
-            }
-          },
-          {
-            icon: 'settings',
-            href: '#',
-            title: 'Settings',
-            click: (e) => {
-              console.log(e);
-            }
-          },
-          {
             icon: 'fullscreen_exit',
             href: '#',
-            title: 'Logout',
+            title: 'Cerrar sesión',
             click: this.handleLogout
           }
         ],
@@ -80,7 +64,8 @@
       handleFullScreen() {
         Util.toggleFullScreen();
       },
-      handleLogout() {
+      async handleLogout() {
+        await this.$strapi.logout()
         this.$router.push('/login');
       }
     }

@@ -16,37 +16,42 @@
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" flat @click.native="basic.dialog = false">NO</v-btn>
-                <v-btn color="blue darken-1" flat @click.native="basic.dialog = false">SI</v-btn>
+                <v-btn color="blue darken-1" flat @click.native="basic.dialog = false" @click="onDelete">SI</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
 </template>
 
 <script>
-  import VWidget from '@/components/VWidget';
+import axios from 'axios';
 
-  export default {
-    components: {
-      VWidget
-    },
+export default {
     data() {
-      return {
-        basic: {
-          dialog: false
-        },
-        fullscreen: {
-          dialog: false,
-          notifications: false,
-          sound: true,
-          widgets: false
-        },
-        scrollable: {
-          name: '',
-          dialog: false
-        }
-      };
+        return {
+            basic: {
+                dialog: false
+            },
+            fullscreen: {
+                dialog: false,
+                notifications: false,
+                sound: true,
+                widgets: false
+            },
+            scrollable: {
+                name: '',
+                dialog: false
+            }
+        };
     },
+    props: ["id"],
     computed: {},
-    methods: {}
-  };
+    methods: {
+        onDelete() {
+            //console.log("Este es para eliminar!!!" + this.id);
+            axios.delete('http://173.16.1.67:1337/centros/' + this.id)
+              .then(result => { this.$router.push('/dashboard') })
+              .catch(e => console.log(e))
+        }
+    }
+};
 </script>

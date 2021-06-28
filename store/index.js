@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const state = () => ({
   drawer: true
 })
@@ -9,4 +11,10 @@ export const mutations = {
   drawer(state, val) {
     state.drawer = val
   }
+}
+
+const createStore = () => {
+  return new Vuex.Store({
+    
+  })
 }
